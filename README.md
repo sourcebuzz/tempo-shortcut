@@ -61,3 +61,9 @@ This builds the release binary, tags the commit (`vX.Y.Z`), pushes the tag,
 and publishes a GitHub release with the binary attached (requires the `gh`
 CLI to be authenticated).
 
+To also publish the crate to crates.io (requires `cargo login` first):
+
+```sh
+make publish
+```
+

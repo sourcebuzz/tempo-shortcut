@@ -14,3 +14,7 @@ release:
 	git push origin "$(TAG)"
 	gh release create "$(TAG)" $(ARCHIVE) --title "$(TAG)" --generate-notes
 	rm -f $(ARCHIVE)
+
+.PHONY: publish
+publish:
+	cargo publish
