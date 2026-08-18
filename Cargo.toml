@@ -3,6 +3,8 @@ name = "tempo-shortcut"
 version = "0.1.0"
 edition = "2024"
 description = "Linux tray icon for tracking time on Jira/Tempo issues"
+repository = "https://github.com/sourcebuzz/tempo-shortcut"
+license = "MIT"
 
 [dependencies]
 ksni = { version = "0.3", features = ["blocking"] }
@@ -12,3 +14,8 @@ serde_json = "1"
 toml = "0.8"
 chrono = "0.4"
 dirs = "5"
+
+[package.metadata.binstall]
+pkg-url = "{ repo }/releases/download/v{ version }/{ name }-{ target }.tar.gz"
+bin-dir = "{ bin }{ binary-ext }"
+pkg-fmt = "tgz"

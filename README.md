@@ -40,3 +40,24 @@ adjust [src/jira.rs](src/jira.rs).
 cargo build --release
 ./target/release/tempo-shortcut
 ```
+
+Or install a pre-built binary with [cargo-binstall](https://github.com/cargo-bins/cargo-binstall)
+straight from GitHub releases (no compiling, no crates.io publish required):
+
+```sh
+git clone https://github.com/sourcebuzz/tempo-shortcut && cd tempo-shortcut
+cargo binstall --manifest-path Cargo.toml --no-confirm tempo-shortcut
+```
+
+## Releasing
+
+Bump `version` in [Cargo.toml](Cargo.toml), commit, then:
+
+```sh
+make release
+```
+
+This builds the release binary, tags the commit (`vX.Y.Z`), pushes the tag,
+and publishes a GitHub release with the binary attached (requires the `gh`
+CLI to be authenticated).
+
